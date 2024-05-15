@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Страница продажи товаров</title>
+    <link rel="stylesheet" href="css/form.css">
+    <script src="modules/Functions.js"> </script>
+    <script>
+
+    var currentPage = 1;
+
+    document.addEventListener('DOMContentLoaded', function() {
+        var mainTable = document.getElementById('mainTable');
+        GetPageFromTable(1, mainTable, ShowPreviewTableRowClick);
+        AddSortingToTableHeaders(mainTable);
+        UpdateNavigationPanel();
+    });
+
+    </script>
+</head>
+
+<header>
+    <img id = "img1" src="css/burger.png" class="toggle-submenu" onmouseover="toggleMenu('block')" onmouseout="toggleMenu('none')">
+
+
+    <!-- Выбор количества строк на странице -->
+    <div>
+        <label for="itemsPerPage">Строк на странице:</label>
+        <select id="itemsPerPage" onchange="UpdateNavigationPanel(); GetPageFromTable(1);">
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+            <option value="20">20</option>
+            <option value="100" selected>100</option>
+        </select>
+    </div>
+</header>
+
+<body>
+
+<div id="modalOverlay"></div>
+
+<input type="text" class="search-bar" placeholder="Поиск товаров...">
+
+<!-- Место под панель навигации -->
+<div id="navigationPanel"></div>
+
+<div class="container1">
+    <div id="products-table">
+        <table id="mainTable" class="table" name="Лекарство" data-preview="изображение">
+            <thead>
+            <tr>
+                <th name="ид_лекарства">ID лекарства</th>
+                <th name="название">название</th>
+                <th name="производитель">производитель</th>
+                <th name="цена">цена</th>
+            </tr>
+            </thead>
+            <tbody>
+            <!-- Здесь будет динамически заполняться таблица -->
+            </tbody>
+        </table>
+    </div>
+    <div class="container2">
+        <div class="image-preview" id="imagePreview">
+            <!-- Здесь будет отображаться картинка товара -->
+        </div>
+        <button class="sell-button" onclick="createModal()">Продать товар</button>
+    </div>
+</div>
+</body>
+</html>

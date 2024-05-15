@@ -1,0 +1,228 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
+
+
+ /* Главная */
+
+#container1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 60px;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+#cards_container, #reports_container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 10px;
+    width: calc(45% - 80px);
+    height: 700px;
+    margin: 0;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.card {
+    transition: transform 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: scale(0.95);
+}
+
+ /* Продажи */
+
+.container2 img{
+    width: 500px;
+    height: 500px;
+}
+
+.search-bar {
+    margin-top: 10px;
+    width: 100%;
+    display: block;
+}
+
+.sell-button {
+    margin-top: 10px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+}
+
+.sell-button:hover {
+    opacity: 1;
+}
+
+.container1 {
+    display: flex;
+    justify-content: space-between;
+}
+
+#products-table {
+    width: 70%;
+}
+
+.image-preview {
+    width: 30%;
+    background-color: #f3f3f3;
+    text-align: center;
+    padding: 20px;
+}
+
+
+ /* Таблица */
+
+.table {
+    border-collapse: collapse;
+    border: 1px solid black;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.table th, .table td {
+    border: 1px solid black;
+    padding: 8px;
+}
+
+.table tbody tr:hover {
+    background-color: #e0e0e0;
+    cursor: pointer;
+}
+
+.table thead tr th:hover {
+    background-color: #b3d1ff;
+    cursor: pointer;
+}
+
+ /* Кнопки */
+
+.addButton, .deleteButton, .submitButton, .cancelButton {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+.addButton, .submitButton {
+    background-color: #90ee90; /* светло-зеленый цвет */
+    color: #fff;
+}
+
+.addButton:hover, .submitButton:hover {
+    background-color: #76c476; /* немного темнее зеленый при наведении */
+}
+
+.deleteButton, .cancelButton {
+    background-color: #ffcccb; /* светло-красный цвет */
+    color: #fff;
+}
+
+.deleteButton:hover, .cancelButton:hover {
+    background-color: #ff9999; /* немного темнее красный при наведении */
+}
+
+.addButton, .deleteButton {
+    padding: 8px 16px;
+    font-size: 0.9em;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.submitButton, .cancelButton {
+    padding: 12px 24px;
+    font-size: 1em;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Модальное окно */
+
+#modalOverlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+
+/* Модальные окна на странице продажи */
+
+#modalSale {
+    height: 500px;
+    width: 600px
+}
+
+#modalSaleContainer1 {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+#modalSaleContainer2 {
+    display: flex;
+    flex: row;
+}
+
+/* Панель навигации */
+
+#navigationPanel {
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+#navigationPanel button {
+    margin-right: 10px;
+}
+
+#navigationPanel button.active {
+    background-color: blue;
+}
